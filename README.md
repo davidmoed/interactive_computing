@@ -56,10 +56,11 @@ Make sure to click on the castle doors for a special easter-egg!
 <h3>Project description</h3>
 
 <p>The color tracking painting program can be used in two ways: with live video capture, and still images. The current way you use the program can be chosen with the dropdown menu. When the program begins the canvas with the video is in the top left corner. By clicking anywhere in the canvas, you can capture the color of whatever you click on. Lighting is important when using the camera, as low light will make it harder to capture the correct color.</p>
+<ul>
+<li>In video capture mode, whenever the mouse goes out of the canvas, you will begin to paint in a number of shapes that can be chosen with the drop down menu for shapes. You can choose to paint in circles, squares, or triangles. To save your sketch press 'X'.</li>
 
-<p>In video capture mode, whenever the mouse goes out of the canvas, you will begin to paint in a number of shapes that can be chosen with the drop down menu for shapes. You can choose to paint in circles, squares, or triangles. To save your sketch press 'X'.</p>
-
-<p>In still capture mode, the program works similarly to video capture mode, however, you can draw over the canvas. To capture a new still click 'C'. You can draw with the same shapes as in video capture mode and save your image the same way.</p>
+<li>In still capture mode, the program works similarly to video capture mode, however, you can draw over the canvas. To capture a new still click 'C'. You can draw with the same shapes as in video capture mode and save your image the same way.</li>
+</ul>
 
 </li>
 
