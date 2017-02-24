@@ -41,9 +41,9 @@ The VR world was created with a few driver files that create the castle and some
 		<p>This folder contains the "lego" spaceship that appears in the world in web browsers. The rocket is a 3D model created from <a href="mecabricks.com/en">mecabricks.com</a>.</p>
 	</li>	
 </ul>
-<p>Fly around the castle by "clicking" or holding down the action button on your VR headset to move and explore.<br
+<p>Fly around the castle by "clicking" or holding down the action button on your VR headset to move and explore.<br>
 Make sure to click on the castle doors for a special easter-egg!
-></p>
+</p>
 </li>
 </ul>
 
