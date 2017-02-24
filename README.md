@@ -25,7 +25,7 @@ The obstacles move across the screen towards Crash at slowly incrementing speeds
 </li>
 
 <li>
-<h3>VR Castle Exploration</h>
+<h3>VR Castle Exploration</h3>
 
 <p>While exploring Virtual Reality coding we were able to create our own world. I learned the proper uses for using object arrays, different 3D shapes, equirectangular images, repeating and disappearing objects, and 3D models.</p>
 
