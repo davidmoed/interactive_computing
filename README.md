@@ -11,7 +11,7 @@
 </ul>
 
 <ol>
-<li>
+<li style="margin-top:30px;">
 <h2>Crash Bandicoot Escape Game</h2>
 
 <p>One of the first topics covered in Interactive Computing was video game logic. Each week we were tasked with creating a simple game based on the skills we learned that week. The Crash game was created as a program which required a user controlled character and multiple autonomous computer controlled objects.</p>
@@ -24,7 +24,7 @@ The obstacles move across the screen towards Crash at slowly incrementing speeds
 </p>
 </li>
 
-<li>
+<li style="margin-top:30px;">
 <h2>VR Castle Exploration</h2>
 
 <p>While exploring Virtual Reality coding we were able to create our own world. I learned the proper uses for using object arrays, different 3D shapes, equirectangular images, repeating and disappearing objects, and 3D models.</p>
