@@ -1,6 +1,8 @@
 <h1>Interactive Computing</h1>
 
-<h3>My Interactive Computing class developed my ability to code alternative projects by teaching me basic video game logic, color, movement, and facial tracking, Augmented Reality, and Virtual Reality. These skills have a myriad of uses and I am excited to continue to experiment with and expand upon the knowledge I gained here.</h3>
+<h3>My Interactive Computing class developed my ability to code alternative projects by teaching me basic video game logic, color, motion, and facial tracking, Augmented Reality, and Virtual Reality. These skills have a myriad of uses and I am excited to continue to experiment with and expand upon the knowledge I gained here.</h3>
+
+<p>In this class we created projects in a new language called P5. P5 is a new Javascript language that takes the best of Processing and utilizes central functions from Processing to make it accessable. What sets P5 apart from Processing is the fact that it was created for web use and sketches are easily included in any site. P5 is still in beta, but it felt much more comfortable and easy to use than Processing in Java.</p>
 
 <h2>Some of the projects I worked on which are included in this repository are:</h2>
 <ul>
@@ -29,7 +31,7 @@ The obstacles move across the screen towards Crash at slowly incrementing speeds
 
 <p>While exploring Virtual Reality coding we were able to create our own world. I learned the proper uses for using object arrays, different 3D shapes, equirectangular images, repeating and disappearing objects, and 3D models.</p>
 
-<h3>Castle in Space</h3>
+<h3>Project Description</h3>
 
 <p>In the deep recesses of space there is a castle! You got there flying on your "lego" rocket ship and now it's time to explore this multicolored wonder! <br>
 The VR world was created with a few driver files that create the castle and some of it's main aspects. </p>
@@ -45,6 +47,31 @@ The VR world was created with a few driver files that create the castle and some
 Make sure to click on the castle doors for a special easter-egg!
 </p>
 </li>
+
+<li>
+<h3>Color Tracking Painting Program</h3>
+
+<p>A big emphasis was put on motion detection, simple gesture control, brightness & color tracking for the latter part of our semester. We explored different tactics and implementations for each of these technologies which utilize cameras and created our own programs based off of these discussions.</p>
+
+<h3>Project description</h3>
+
+<p>The color tracking painting program can be used in two ways: with live video capture, and still images. The current way you use the program can be chosen with the dropdown menu. When the program begins the canvas with the video is in the top left corner. By clicking anywhere in the canvas, you can capture the color of whatever you click on. Lighting is important when using the camera, as low light will make it harder to capture the correct color.</p>
+
+<p>In video capture mode, whenever the mouse goes out of the canvas, you will begin to paint in a number of shapes that can be chosen with the drop down menu for shapes. You can choose to paint in circles, squares, or triangles. To save your sketch press 'X'.</p>
+
+<p>In still capture mode, the program works similarly to video capture mode, however, you can draw over the canvas. To capture a new still click 'C'. You can draw with the same shapes as in video capture mode and save your image the same way.</p>
+
+</li>
+
+<li>
+<h3>Election Vote Capture Game</h3>
+
+
+
+
+</li>
+
+
 </ul>
 
 
