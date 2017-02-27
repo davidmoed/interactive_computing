@@ -67,9 +67,13 @@ Make sure to click on the castle doors for a special easter-egg!
 <li>
 <h3>Election Vote Capture Game</h3>
 
+<p>For the first midterm in class, we were given just over an hour to re-create a game shown to us in a series of gifs online. We were instructed to build the game incrementally, as each gif and set of instructions added a few elements to the game. The midterm took place in the lead up to the 2016 election and I can't stress enough that it has nothing to do with politics or my political views.</p>
 
+<h3>Game Description</h3>
 
-
+<p>The objective of the game is to catch as many votes as possible before they hit the bottom of the screen. Your character can move left and right and is controlled by the mouse based on what side of the character it is. To the left your character is Donald Trump, and to the right it is Hillary Clinton</p>
+<p>There are 3 types of "votes" that come down from above. The votes start at a random value above the canvas and reset as they hit the bottom. The vote images are randomized at each reset and they use Perlin noise and rotation to move through the canvas in a more interesting way.</p>
+<p>The total number of votes caught is shown as score in the top left corner. When a vote is caught it resets as well.</p>
 </li>
 
 
