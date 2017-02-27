@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>HW3_Game</title>
+    <script src="libraries/p5.js" type="text/javascript"></script>
+
+    <script src="libraries/p5.dom.js" type="text/javascript"></script>
+    <script src="libraries/p5.sound.js" type="text/javascript"></script>
+
+    <script src="sketch.js" type="text/javascript"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <style>
+      body {
+        padding: 0; margin: 0 55px;
+        text-align: center;
+        margin-bottom: 30px;
+        }
+
+      canvas {vertical-align: top;}
+
+      p {
+        margin: 0 55px;
+      }
+      .dropdowns {
+        display: inline;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1>Crash Bandicoot Survival Game</h1>
+
+    <p>Crash Bandicoot is on the run! To escape he needs to avoid the obstacles for long enough to get away. The longer he runs though, the faster the obstacles get! Crash has 3 lives to survive with and needs to last 60 seconds in order to win. Control Crash with the arrow keys or WASD to get him safely to the end! Choose the starting speed of the obstacles by picking easy, medium, or hard in the menu.</p>
+<br>
+    <p>The game features the original soundtrack from Crash bandicoot 1. The soundtrack can be toggled on and off with the sound menu. There is also a cheat menu that can be used to remove 1 or 2 obstacles depending on how hard the player wants the game to be.</p>
+    <br><br>
+    <form class="dropdowns">
+      <select name="myMenu"  id="myMenu" onchange="updateMenu(this);">
+        <option value="a">No Cheat</option>
+        <option value="b">Cheat</option>
+        <option value="c">Cheat More</option>
+      </select>
+    </form>
+
+    <form class="dropdowns">
+      <select name="soundMenu" id="soundMenu" onchange="updateSound(this);">
+        <option value="a">Sound On</option>
+        <option value="b">Mute</option>
+      </select>
+    </form>
+    <br><br>
+
+    <div id="gameCanvas"></div>
+    <h2>Save Crash!</h2>
+
+    <p>The obstacles move across the screen towards Crash at slowly incrementing speeds. Each time an obstacle hits the end of the screen, it starts again on the opposite side with a random height between 50 and 150 pixels, in a random location between 0 and 400 pixels from the top of the canvas.</p>
+<br>
+    <p>When there is a collision between Crash and one of the obstacles, all of the objects reset to their own location. At this time Crash also loses a life. If he loses 3 lives, the game is over. While the objects start from their original locations after a collision, the speed of the oncoming objects does not reset, ensuring that the game remains challenging. Finally, the sound from the original Crash Bandicoot plays when there is a collision.</p>
+  </body>
+</html>
