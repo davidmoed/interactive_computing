@@ -10,67 +10,67 @@
 
     <script src="sketch.js" type="text/javascript"></script>
 
-    <style> 
+    <style>
       body {
-        padding: 0; 
+        padding: 0;
         margin: 0;
        /*background-image:url("/blueBackground.jpg");*/
-       background-color: lightblue;
-        
-      } 
+       background-color: lightblue;  
+
+      }
       canvas {
         vertical-align: top;
         border:1px solid black;
-      } 
-      
+      }
+
       form {
         text-align:center;
       }
-      
+
       p, h2, h4 {
         margin: 15px 30px;
         text-align:center;
       }
-    
-    
+
+
     </style>
   </head>
   <body>
     <h2>Welcome to the interactive Coloring Program</h2>
-    <h4>Use the up and running video, 
-    or switch the menu from video to capture still images and press C to take an image from your camera. 
+    <h4>Use the up and running video,
+    or switch the menu from video to capture still images and press C to take an image from your camera.
     <br> Click on anything in the video/image to save its color and start painting with it!</h4>
-    
-    <p> 
-    To change the shape to paint with, use the dropdown menu, or press 'A' for circles, 
+
+    <p>
+    To change the shape to paint with, use the dropdown menu, or press 'A' for circles,
     'S' for squares, and 'D' for triangles.</p>
-    
+
     <p>To save your sketch press 'X'</p>
-    
-    <form> 
+
+    <form>
       <select name="captureMenu" id="captureMenu" onchange="updateCaptureMenu(this);">
         <option value="Video">Video</option>
         <option value="Still Image">Still Image</option>
       </select>
-      
+
       <select name="shapeMenu" id="shapeMenu" onchange="updateShapeMenu(this);">
         <option value="Circle">Circle</option>
         <option value="Square">Square</option>
         <option value="Triangle">Triangle</option>
       </select>
     </form>
-    
+
     <!-- keep the canvas to the left because moving it messes up the color capture -->
     <div id="ourCanvas"></div>
-    
-    <p>For this project I wanted to combine the color capture with a simple painting program, 
+
+    <p>For this project I wanted to combine the color capture with a simple painting program,
     that can be expanded to allow the user a wide range of shapes, all with a color of their choosing.
     This program allows the user to hold up any colored item to their computer camera and capture it.
     The user can currently draw either circles, squares, or triangles in this color.
     </p>
-    
+
     <p>The user can choose to capture either with constantly capturing video with their camera, or capture stills.
-    The stills are useful because the user can paint over them, and they require less computing power, allowing 
+    The stills are useful because the user can paint over them, and they require less computing power, allowing
     the program to run faster.</p>
   </body>
 </html>
