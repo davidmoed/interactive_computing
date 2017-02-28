@@ -14,8 +14,6 @@ var doorOpen, doorClose;
 
 var spaceship;
 
-var container;
-
 function setup() {
   noCanvas();
   
@@ -57,35 +55,12 @@ function setup() {
   });
   world.add(spaceship);
 	
-	
-	container = new Container3D({x:0, y:1, z:-5});
-	
-	world.add(container);
-	
-	var s1 = new Sphere({
-						x:-5, y:0, z:0,
-						red: random(255), green:random(255), blue:random(255)
-	});
-	
-	container.addChild(s1);
-
-	var s2 = new Sphere({
-						x:5, y:0, z:0,
-						red: random(255), green:random(255), blue:random(255)
-	});
-	
-	container.addChild(s2);
-	
-	container.addChild(spaceship);
-	
 }
 
 function draw() {
   if (mouseIsPressed || touchIsDown) {
 		world.moveUserForward(0.1);
 	}
-	
-	container.spinY(1);
 
   // always create a new particle
 	var temp = new Rain(-2.5, 0, 2.5);
