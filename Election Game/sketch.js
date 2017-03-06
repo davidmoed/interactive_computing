@@ -1,4 +1,7 @@
+//Vote Catching Game
+
 var default_image;
+var theCanvas;
 
 var score = 0;
 
@@ -33,7 +36,23 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(900,495);
+  theCanvas = createCanvas(900,495);
+  
+  // apply a style to this element
+  theCanvas.style('border', '5px solid black');
+  theCanvas.style('display', 'block');
+  theCanvas.style('margin', 'auto');
+  
+  //set an id for the canvas to be referenced in the index.html
+  theCanvas.parent("#gameCanvas");
+  
+  // apply a style to this element
+  theCanvas.style('border', '5px solid black');
+  theCanvas.style('display', 'block');
+  theCanvas.style('margin', 'auto');
+  
+  //set an id for the canvas to be referenced in the index.html
+  theCanvas.parent("#gameCanvas");
   
   default_image = trumpR;
   

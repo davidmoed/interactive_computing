@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>MidtermTest</title>
+    <title>Vote Catch | David Moed</title>
     <script src="libraries/p5.js" type="text/javascript"></script>
 
     <script src="libraries/p5.dom.js" type="text/javascript"></script>
@@ -10,8 +10,48 @@
 
     <script src="sketch.js" type="text/javascript"></script>
 
-    <style> body {padding: 0; margin: 0;} canvas {vertical-align: top;} </style>
+    <style>
+      body {
+    	padding: 0; margin: 0 55px;
+        text-align: center;
+        margin-bottom: 30px;
+        }
+
+      canvas {vertical-align: top;}
+
+      p {
+        margin: 0 55px;
+      }
+      .dropdowns {
+        display: inline;
+        margin-bottom: 30px;
+      }
+      button{
+      	padding: 10px;
+      	margin-top: 15px;
+      }
+      a {
+      	text-decoration: none;
+      }
+
+    </style>
   </head>
   <body>
+
+  <h1>Election Vote Catching Game</h1>
+
+  <p>The election is in full swing and there's a mad dash to get votes! Bring the character back and forth using your mouse to "catch" votes. Each time you catch a vote, the vote counter increases in the top left corner. </p>
+
+  <p>This project was created in just over an hour as part of a midterm. Enjoy!</p>
+
+  <div id="gameCanvas"></div>
+
+  <p>The votes float down from the top of the canvas, and wrap back to the top when they hit the bottom. The votes also wiggle down using Perlin noise and the vote "type" is reset randomly as it resets.</p>
+
+   <form>
+		<button formaction="http://www.davidmoed.com/#/portfolio">
+			Return to Portfolio
+		</button>
+    </form>
   </body>
 </html>
