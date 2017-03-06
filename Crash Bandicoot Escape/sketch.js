@@ -1,3 +1,5 @@
+//Crash Game
+
 
 //Character controls
 var Xpos, Ypos;
@@ -38,13 +40,12 @@ var currentScreen;
 var gameTime, startTime, time, menuTime;
 
 //sound variables
-var whoa, soundtrack;
+var whoa;
 
 function preload() {
   crash = loadImage("CrashBandicoot.png");
   canvas = loadImage("dice.png");
   whoa = loadSound("Whoa.mp3");
-  soundtrack = loadSound("Crash_Bandicoot_Theme.mp3");
 }
 
 
@@ -58,25 +59,25 @@ function setup() {
   theCanvas.style('display', 'block');
   theCanvas.style('margin', 'auto');
   
+  //set an id for the canvas to be referenced in the index.html
   theCanvas.parent("#gameCanvas");
   
+  //start time for time tracker
   startTime = millis();
   
+  //set starting values
   lives = 3;
-  
   counter = 0;
-
-  blockMovement;
-  
-  currentScreen = 0;
-  
+  blockMovement; 
+  currentScreen = 0;  
   character_speed = 2;
-
   numBlocks = 1;
   
+  //set starting position for Crash
   xPos = 50;
   yPos = height/2;
   
+  //set block starting position & size
   block1X = width - 5;
   block1Y = height /2;
   
@@ -91,14 +92,11 @@ function setup() {
   block2Height = 75;
   block3Height = 50;
   
-  
-  soundtrack.loop();
 }
 
-function draw() {
+function draw() { 
   
-  
-  
+  //set screen changes
   if (currentScreen < 5) {
     
     if (currentScreen === 0) {
@@ -120,12 +118,14 @@ function draw() {
 
 
 
-
+//create the menu
 function menuScreen() {
   background(255);
   
+  //start the time taken by the menu
   menuTime = millis();
   
+  //header text
   textSize(30);
   text("Welcome to the escape game! Last 60 seconds to win!", 50, 100);
   
@@ -136,6 +136,7 @@ function menuScreen() {
   
   text("Good Luck!", width/2 - 60, 275);
   
+  //set the starting speed based on user choice
   if (keyIsPressed == 1) {
     blockMovement = 1;
     currentScreen++;
@@ -149,36 +150,39 @@ function menuScreen() {
 
 }
 
-
+//the game
 function gameScreen () {
   image(canvas, 0 , 0);
       image(crash, xPos, yPos);
       
       fill(0);
       
+      //set the counter for lives remaining
       text("Lives Remaining: " + lives, 20,20);
       
       
       time = millis();
       gameTime = time - startTime - menuTime;
       
+      //set the survival time counter
       roundTime = round(gameTime/1000);
       showTime = "Total survival time: " + roundTime;
       text(showTime, 20, 40);
       
-      
+      //increment the counter
       counter += frameCount;
       
-      
+      //continue playing while the user still has lives
       if (lives > 0) {   
         lifeTime = millis();
         
-        
+        //initialize the first block
         Block1();
+        //initialize other blocks based on the cheat menu
         updateMenu( myMenu );
         
         
-        //move up or down with arrow keys or W and S
+        //move up or down with arrow keys or WASD
         if (keyIsDown(LEFT_ARROW)) {
           xPos -= character_speed;
         }
@@ -218,7 +222,7 @@ function gameScreen () {
         charTop = yPos;
         charBottom = yPos + crash.height;
         
-      
+      	//check for collisions between Crash and the blocks
         if (charRight > block1Left && charLeft < block1Right && charBottom > block1Top && charTop < block1Bottom) {
           restartGame();
         } else if (charRight > block2Left && charLeft < block2Right && charBottom > block2Top && charTop < block2Bottom) {
@@ -227,12 +231,15 @@ function gameScreen () {
           restartGame();
         }
       }
+      //if the user runs out of lives, change to loss screen
       if (lives === 0) {
         currentScreen += 1;
       }
+      //if user survives for 60 seconds, add win message
       if (roundTime >= 60) {
         text("You Win!!!", 500 , 20);
       }
+      //if user survives for 2 minutes, change to win screen
       if (roundTime >= 120) {
         currentScreen += 2;
       }
@@ -240,8 +247,10 @@ function gameScreen () {
 }
 
 
+//the win screen
 function winScreen() {
   
+  //set random colors to cycle for the text
   var r , g, b;
   
   r = random(255);
@@ -252,10 +261,9 @@ function winScreen() {
   textSize(32);
   text("You Win!!!" ,width/2 - 100, height/2);
   
-
 }
 
-
+//the loss screen
 function lossScreen() {
   background(0);
   
@@ -266,9 +274,13 @@ function lossScreen() {
 }
 
 
-
+//all controls for block 1
 function Block1() {
+ 
+ //create the block
   block1 = rect(block1X, block1Y, blockWidth, block1Height);
+  
+  //move the block across the screen
   if (block1X > 0) {
       block1X -= blockMovement;
     }
@@ -279,18 +291,27 @@ function Block1() {
   block1Top = block1Y;
   block1Bottom = block1Y + block1Height;
   
+  //if the block goes off the end of the screen:
+  	//start it off the screen
+  	//set a random starting height on screen
+  	//set a random starting block height
+  	//slowly increment block speed
   if (block1X <= 0) {
-      block1X = width -5;
+      block1X = width - random(5,25);
       block1Y = random(0,400);
       block1Height = random(50,150);
       blockMovement += .2;
     }
 }
 
-
+//all controls for block 2
 function Block2() {
-   if (counter > 360 * 100) {
-    block2 = rect(block2X, block2Y, blockWidth, block2Height);
+	
+	//create the block based on counter time
+	if (counter > 360 * 100) {
+    	block2 = rect(block2X, block2Y, blockWidth, block2Height);
+    
+    //move the block across the screen
     if (block2X > 0) {
       block2X -= blockMovement;
     }
@@ -301,8 +322,13 @@ function Block2() {
     block2Top = block2Y;
     block2Bottom = block2Y + block2Height;
     
+    //if the block goes off the end of the screen:
+  		//start it off the screen
+  		//set a random starting height on screen
+  		//set a random starting block height
+  		//slowly increment block speed
     if (block2X <= 0) {
-        block2X = width -5;
+        block2X = width - random(5,25);
         block2Y = random(0,400);
         block2Height = random(50,150);
         blockMovement += .2;
@@ -311,9 +337,11 @@ function Block2() {
 }
 
 function Block3() {
-  
+  //create the block based on counter time
   if (counter > 360 * 250) {
     block3 = rect(block3X, block3Y, blockWidth, block3Height);
+    
+    //move the block across the screen
     if (block3X > 0) {
       block3X -= blockMovement;
     }
@@ -324,8 +352,13 @@ function Block3() {
   block3Top = block3Y;
   block3Bottom = block3Y + block3Height;
     
+    //if the block goes off the end of the screen:
+  		//start it off the screen
+  		//set a random starting height on screen
+  		//set a random starting block height
+  		//slowly increment block speed
     if (block3X <= 0) {
-        block3X = width -5;
+        block3X = width - random(5,25);
         block3Y = random(0,40);
         block3Height = random(50,150);
         blockMovement += .2;
@@ -334,6 +367,7 @@ function Block3() {
   }
 }
 
+//begin the game again by resetting block locations and character after Crash dies
 function restartGame () {
   
   whoa.play();
@@ -358,6 +392,7 @@ function restartGame () {
   
 }
 
+//cheat menu
 function updateMenu( myMenu ) {
   // get the value of the menu
   var menuValue = myMenu.value;
@@ -370,14 +405,4 @@ function updateMenu( myMenu ) {
     Block2();
   } 
   
-}
-
-function updateSound( soundMenu ) {
-  var menuValue = soundMenu.value;
-  
-  if (menuValue == 'a') {
-    soundtrack.loop();
-  } else {
-    soundtrack.stop();
-  }
 }
