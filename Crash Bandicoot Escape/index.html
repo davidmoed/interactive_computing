@@ -9,13 +9,16 @@
     <script src="libraries/p5.sound.js" type="text/javascript"></script>
 
     <script src="sketch.js" type="text/javascript"></script>
+    
+    <link rel="stylesheet" href="libraries/bootstrap.min.css">
 
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> 
     <style>
       body {
         padding: 0; margin: 0 55px;
         text-align: center;
         margin-bottom: 30px;
+        font-family: 'Raleway', sans-serif;
         }
 
       canvas {vertical-align: top;}
@@ -58,12 +61,6 @@
     <p>The obstacles move across the screen towards Crash at slowly incrementing speeds. Each time an obstacle hits the end of the screen, it starts again on the opposite side with a random height between 50 and 150 pixels, in a random location between 0 and 400 pixels from the top of the canvas.</p>
 <br>
     <p>When there is a collision between Crash and one of the obstacles, all of the objects reset to their own location. At this time Crash also loses a life. If he loses 3 lives, the game is over. While the objects start from their original locations after a collision, the speed of the oncoming objects does not reset, ensuring that the game remains challenging. Finally, the sound from the original Crash Bandicoot plays when there is a collision.</p>
-
-    <form>
-		<button formaction="http://www.davidmoed.com/#/portfolio">
-			Return to Portfolio
-		</button>
-    </form>
-
+    
   </body>
 </html>
